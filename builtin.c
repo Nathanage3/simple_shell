@@ -11,7 +11,6 @@ int _builtin_cmd(char *buff, char **argv)
 
 	if (_strcmp(argv[0], "exit") == 0)
 	{
-		errno = 0;
 		free(buff);
 		free_argv(argv);
 		exit(0);
@@ -29,10 +28,11 @@ int _builtin_cmd(char *buff, char **argv)
 		_env();
 		return (1);
 	}
-		
 	return (0);
 }
 /**
+ * _env - environmental variable
+ *
  */
 void _env(void)
 {

@@ -2,7 +2,9 @@
 /**
  * get_loc - get the location of the path
  * @argv: argument vector
- *
+ * @av: av
+ * @mode: mode
+ * @counter: counter
  * Return: NULL if it finds the exact location of the path
  */
 char *get_loc(char *argv, char *av,  int mode, int counter)
@@ -16,7 +18,7 @@ char *get_loc(char *argv, char *av,  int mode, int counter)
 	path = _getenv("PATH");
 	if (path)
 	{
-		full_path = place_of_path(path, argv, av, mode, counter );
+		full_path = place_of_path(path, argv, av, mode, counter);
 		if (full_path == NULL)
 			return (NULL);
 		return (full_path);
@@ -29,7 +31,9 @@ char *get_loc(char *argv, char *av,  int mode, int counter)
  *
  * @path: the path
  * @argv: the argument vector
- *
+ * @av: av
+ * @mode: mode
+ * @counter: counter
  * Return: NULL char if it exactly finds
  */
 char *place_of_path(char *path, char *argv, char *av, int mode, int counter)
@@ -67,12 +71,10 @@ char *place_of_path(char *path, char *argv, char *av, int mode, int counter)
 			free(temp);
 			return (traverse);
 		}
-		/*errno = 127;*/
 		free(traverse);
 		token = _strtok(NULL, delm);
 	}
 	free(temp);
-	/*free(argv);free(traverse);error_message(av, counter, argv);*if (mode != 1){exit(errno);}*/
 	return (NULL);
 }
 /**

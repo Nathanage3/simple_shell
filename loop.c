@@ -28,14 +28,10 @@ void loop(char **av, char **env)
 		counter++;
 		parse_arguments(buff, argv,  delim);
 		if (argv[0] == NULL)
-		{
-			continue;
-		}
+		{continue; }
 		if (_builtin_cmd(buff, argv) != 0)
-		{
-			free_argv(argv);
-			continue;
-		}
+		{free_argv(argv);
+			continue; }
 		else
 		{
 			path = get_loc(argv[0], av[0], mode, counter);
@@ -76,7 +72,7 @@ void comment(char *str)
  * @av: program name
  * @i: the counter when the prompt enters
  * a command
- * @buff: user input
+ * @argv: user input
  *
  */
 void error_message(char *av, int i, char *argv)
