@@ -18,12 +18,12 @@ int _builtin_cmd(char *buff, char **argv)
 	else if (_strcmp(argv[0], "cd") == 0)
 	{
 		if (argv[1] == NULL)
-			chdir(getenv("HOME"));
+			chdir(_getenv("HOME"));
 		else
 			chdir(argv[1]);
 		return (1);
 	}
-	if (_strcmp(argv[0], "env") == 0)
+	else if (_strcmp(argv[0], "env") == 0)
 	{
 		_env();
 		return (1);

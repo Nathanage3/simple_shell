@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define BUFSIZE 1024
+
 #define ARG_MAX 100
 extern char **environ;
 
@@ -22,10 +22,6 @@ char *_strpbrk(const char *str1, const char *str2);
 char *_strcpy(char *dest, const char *src);
 
 /*fork.c*/
-void *_memcpy(void *dest, const void *src, size_t n);
-void *_realloc(void *ptr, size_t size);
-int _fgetc(FILE *stream);
-ssize_t _getline(char **ptr, size_t *buff_size, FILE *stream);
 int cmd_execute(char **av, char *path, char **argv, char **env);
 /*loop.c*/
 void loop(char **av, char **env);

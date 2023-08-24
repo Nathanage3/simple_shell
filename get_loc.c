@@ -64,7 +64,7 @@ char *place_of_path(char *path, char *argv, char *av, int mode, int counter)
 		_strcpy(traverse, token);
 		_strcat(traverse, "/");
 		_strcat(traverse, argv);
-		_strcat(traverse, "\0");
+		/*_strcat(traverse, "\0");*/
 		res = access(traverse, X_OK);
 		if (res == 0)
 		{
